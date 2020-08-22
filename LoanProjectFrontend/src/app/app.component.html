@@ -1,0 +1,220 @@
+<div class="container">
+<h1>Submit Application</h1>
+<form [formGroup]="personForm" (ngSubmit)="onSubmit()" class="form-horizontal" >
+      <div class="form-group">
+          <label class="control-label col-sm-2">First Name</label>
+          <div class="col-sm-10">
+                  <input type="text" class="form-control" formControlName="firstName"  placeholder="First name" />
+                  <span style="color:red" *ngIf="personForm.controls['firstName'].hasError('required')">First Name is required</span> 
+                  <span style="color:red" *ngIf="personForm.controls['firstName'].hasError('maxlength')">First Name is too long</span> 
+          </div>
+
+          <!--<input  type="text" class="form-control" formControlName="firstName"/>-->
+      </div>
+             <!--<div class="alert alert-danger" *ngIf="personForm.controls['firstName'].hasError('required')">
+                  First Name Cannot be Empty
+              </div>-->
+      
+           
+      <div  class="form-group">
+            <label class="control-label col-sm-2">Middle Name</label>
+            <div class="col-sm-10">
+                  <input  type="text" class="form-control" formControlName="middleName"  placeholder="Middle name" />
+                  <span style="color:red" *ngIf="personForm.controls['middleName'].hasError('maxlength')">Middle Name is too long</span>
+            </div>
+      </div>
+      <div  class="form-group">
+          <label class="control-label col-sm-2">Last Name</label>
+          <div class="col-sm-10">
+                  <input  type="text" class="form-control" formControlName="lastName"  placeholder="Last name"/>
+                  <span style="color:red" *ngIf="personForm.controls['lastName'].hasError('required')">Last Name is required</span> 
+                  <span style="color:red" *ngIf="personForm.controls['lastName'].hasError('maxlength')">Last Name is too long</span> 
+          </div>
+      </div>
+      <div  class="form-group">
+            <label class="control-label col-sm-2">Date of Birth</label>
+            <div class="col-sm-10">
+                    <input  type="text" class="form-control" formControlName="dob"  placeholder="Date of birth" name="dob"/>
+                    <span style="color:red" *ngIf="personForm.controls['dob'].hasError('required')">Date of birth is required</span>
+            </div>
+      </div>
+      <div  class="form-group">
+            <label class="control-label col-sm-2">Marital Status</label>
+            <div class="col-sm-10">
+                  <select class="form-control" formControlName="marital">
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Separated">Separated</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Widowed">Widowed</option>
+                  </select>
+                  <span style="color:red" *ngIf="personForm.controls['dob'].hasError('required')">Marital Status is required</span>
+            </div>      
+      </div>
+      <div  class="form-group">
+            <label class="control-label col-sm-2">SSN Number</label>
+            <div class="col-sm-10">
+                    <input  type="text" class="form-control" formControlName="ssn"  placeholder="SSN Number" />
+                    <span style="color:red" *ngIf="personForm.controls['ssn'].hasError('required')">SSN number is required</span>
+            </div>
+      </div>
+      <div  class="form-group">
+            <label class="control-label col-sm-2">Loan Amount</label>
+            <div class="col-sm-10">
+                    <input  type="number" class="form-control" formControlName="loanAmount"  placeholder="loanAmount" />
+                    <span style="color:red" *ngIf="personForm.controls['loanAmount'].hasError('required')">Loan Amount is required</span>
+                  </div>
+      </div>
+      <div  class="form-group">
+            <label class="control-label col-sm-2">Loan Purpose</label>
+            <div class="col-sm-10" >
+                  <select class="form-control" formControlName="loanPurpose" >
+                        <option value="Debt">Debt</option>
+                        <option value="Educational Loan">Educational Loan</option>
+                        <option value="Home Loan">Home Loan</option>
+                        <option value="Personal Loan">Personal Loan</option>
+                  </select>
+            </div>
+      </div>
+      <div  class="form-group">
+            <label class="control-label col-sm-2">Description</label>
+            <div class="col-sm-10">
+                    <input  type="text" class="form-control" formControlName="description"  placeholder="Describe the reason why you are applying for the loan" name="description"/>
+            </div>
+      </div>
+            
+
+      <div  class="form-group" formGroupName="address1" >
+            <h3 >Address</h3>
+          <div class="form-group">
+                <label  class="control-label col-sm-2">Address Line 1</label>
+                <div class="col-sm-10">
+                  <!--<input type="text" name="addressline1" formControlName="addressline1" required>
+                  <show-errors [control]="personForm.controls.addressline1"></show-errors>-->
+               <input  type="text" class="form-control" name="addressline1" formControlName="addressline1" placeholder="Address Line 1"/>
+               <span  *ngIf="personForm.controls['addressline1'].errors?.required && personForm.controls['addressline1'].touched">Address line 1 is Required </span>
+                  </div>
+          </div>
+          <div class="form-group">
+               <label  class="control-label col-sm-2">Address Line 2</label>
+               <div class="col-sm-10">
+               <input  type="text" class="form-control" formControlName="addressline2" placeholder="Address Line 2"/>
+               </div>
+          </div>
+          <div class="form-group">
+               <label  class="control-label col-sm-2">City</label>
+               <div class="col-sm-10">
+               <input  type="text" class="form-control" formControlName="city"  placeholder="City"/>
+               </div>
+          </div>
+          <div class="form-group">
+            <label  class="control-label col-sm-2">State</label>
+            <div class="col-sm-10">
+            <input  type="text" class="form-control" formControlName="state"  placeholder="State"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label  class="control-label col-sm-2">Postal Code</label>
+            <div class="col-sm-10">
+            <input  type="number" class="form-control" formControlName="postalcode"  placeholder="12345"  maxlength="5" />
+             </div>
+          </div>
+      </div>
+
+      <div class="form-group" formGroupName="contactinfo">
+          <h3>Contact Information</h3>
+          <div class="form-group">
+                <label  class="control-label col-sm-2">Home Phone</label>
+                <div class="col-sm-10">
+                <input  type="text" class="form-control" formControlName="hphone"  placeholder="12345"/>
+                  </div>
+          </div>
+          <div class="form-group">
+               <label  class="control-label col-sm-2">Office Phone</label>
+               <div class="col-sm-10">
+               <input  type="text" class="form-control" formControlName="ophone"  placeholder="12345"/>
+               </div>
+          </div>
+          <div class="form-group">
+               <label  class="control-label col-sm-2">Mobile</label>
+               <div class="col-sm-10">
+               <input  type="text" class="form-control" formControlName="mobile"  placeholder="12345"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label  class="control-label col-sm-2">Email Address</label>
+            <div class="col-sm-10">
+            <input  type="email" class="form-control" formControlName="email"  placeholder="test@test.com"/>
+            </div>
+          </div>
+          
+      </div>
+
+      <div class="form-group" formGroupName="emp_details">
+          <h3>Employment Details</h3>
+          <div class="form-group">
+                <label  class="control-label col-sm-2">Employer name</label>
+                <div class="col-sm-10">
+                <input  type="text" class="form-control" formControlName="emp_name"  placeholder="Name"/>
+            </div>
+          </div>
+          <div class="form-group">
+               <label  class="control-label col-sm-2">Annual Salary</label>
+               <div class="col-sm-10">
+               <input  type="text" class="form-control" formControlName=" annual_salary"  placeholder="Annual Salary"/>
+            </div>
+          </div>
+          <div class="form-group">
+               <label  class="control-label col-sm-2">Designation</label>
+               <div class="col-sm-10">
+               <input  type="text" class="form-control" formControlName="designation"  placeholder="Designation"/>
+                  </div>
+          </div>
+          <div class="form-group">
+            <label  class="control-label col-sm-2">Work Experience</label>
+            <div class="col-sm-10">
+            <input  type="text" class="form-control" formControlName="work_exp"  placeholder="Work Experience"/>
+            </div>
+          </div>
+          <div class="form-group" formGroupName="address2">
+                  <h4>Address</h4>
+                  <div class="form-group">
+                        <label  class="control-label col-sm-2">Address Line 1</label>
+                        <div class="col-sm-10">  
+                        <input  type="text" class="form-control" formControlName="addressline1_e"  placeholder="Address Line 1"/>
+                        </div>
+                   </div>
+                  <div class="form-group">
+                        <label  class="control-label col-sm-2">Address Line 2</label>
+                        <div class="col-sm-10"> 
+                         <input  type="text" class="form-control" formControlName="addressline2_e"  placeholder="Address Line 2"/>
+                         </div>
+                   </div>
+                  <div class="form-group">
+                        <label  class="control-label col-sm-2">City</label>
+                        <div class="col-sm-10"> 
+                        <input  type="text" class="form-control" formControlName="city_e"  placeholder="City"/>
+                        </div>
+                  </div>
+                  <div class="form-group">
+                        <label class="control-label col-sm-2">State</label>
+                        <div class="col-sm-10"> 
+                        <input  type="text" class="form-control" formControlName="state_e"  placeholder="State"/>
+                        </div>
+                  </div>
+                  <div class="form-group">
+                         <label class="control-label col-sm-2">Postal Code</label>
+                         <div class="col-sm-10"> 
+                         <input  type="text" class="form-control" formControlName="country_e"  placeholder="12345"/>
+                         </div>
+                   </div>
+           </div>
+      
+      </div>
+    
+    <div align="center">
+          <input type="submit" class="btn btn-success">
+    </div>
+       
+</form>
+</div>
