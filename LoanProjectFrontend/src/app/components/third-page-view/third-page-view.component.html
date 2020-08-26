@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>View Applications</title>
+    </head>
+    <body>
+        <h1>View Applications</h1><br/>
+        <p>You can view the application here</p><br/>
+        <table border="1" cellspacing="5px" cellpadding="5px" align="center" style="font-size:20px">
+            <thead style="background-color:grey">
+                <tr>
+                    <th>Applicant ID</th>
+                    <th> Applicant Name</th>
+                    <th>Submitted Date</th>
+                    <th>Status</th>   
+                </tr>
+            </thead>
+        
+        <tbody>
+            <tr *ngFor="let c of data">
+                <td>{{c.applicantId}}</td>
+                <td>{{c.firstName+c.middleName+c.lastName}}</td>
+                <td>{{c.submitDate}}</td>
+                <td>{{c.status}}</td>
+            </tr>
+        </tbody>
+        
+        </table><br/><br/>
+    <div align="center">
+        <button  (click)="handleClick3()" type="button">Back</button>
+    </div>
+    </body>
+</html>

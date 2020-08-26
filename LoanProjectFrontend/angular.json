@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "reactiveForms": {
+    "loandemo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/reactiveForms",
+            "outputPath": "dist/loandemo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "reactiveForms:build"
+            "browserTarget": "loandemo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "reactiveForms:build:production"
+              "browserTarget": "loandemo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "reactiveForms:build"
+            "browserTarget": "loandemo:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "reactiveForms:serve"
+            "devServerTarget": "loandemo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "reactiveForms:serve:production"
+              "devServerTarget": "loandemo:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "reactiveForms"
+  "defaultProject": "loandemo"
 }
