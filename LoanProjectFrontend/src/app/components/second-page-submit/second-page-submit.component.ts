@@ -24,33 +24,34 @@ export class SecondPageSubmitComponent {
       firstName:new FormControl("",[Validators.required,Validators.maxLength(255)]),
       middleName:new FormControl("",[Validators.maxLength(255)]),
       lastName:new FormControl("",[Validators.required,Validators.maxLength(255)]),
-      dob:new FormControl("",[Validators.required]),
-      marital:new FormControl("",[Validators.required]),
-      ssn:new FormControl("",[Validators.required]),
+      dateofBirth:new FormControl("",[Validators.required]),
+      maritalStatus:new FormControl("",[Validators.required]),
+      ssnnumber:new FormControl("",[Validators.required]),
       loanAmount:new FormControl("",[Validators.required]),
       loanPurpose:new FormControl("",[Validators.required]),
       description:new FormControl(),
 
-      addressline1:new FormControl("",[Validators.required,Validators.maxLength(255)]),
-      addressline2:new FormControl("",[Validators.maxLength(255)]),
+      addressLine1:new FormControl("",[Validators.required,Validators.maxLength(255)]),
+      addressLine2:new FormControl("",[Validators.maxLength(255)]),
       city:new FormControl("",[Validators.required,Validators.maxLength(255)]),
       state:new FormControl("",[Validators.required,Validators.maxLength(255)]),
-      postalcode:new FormControl("",[Validators.required,Validators.maxLength(5)]),
+      postalCode:new FormControl("",[Validators.required,Validators.maxLength(5)]),
   
-      hphone:new FormControl("",[Validators.required]),
-      ophone:new FormControl(),
+      homePhone:new FormControl("",[Validators.required]),
+      officePhone:new FormControl(),
       mobile:new FormControl("",[Validators.required]),
-      email:new FormControl("",[Validators.required]),
+      emailAddress:new FormControl("",[Validators.required]),
 
-      emp_name:new FormControl("",[Validators.required,Validators.maxLength(255)]),
-      annual_salary:new FormControl("",[Validators.required]),
+      employername:new FormControl("",[Validators.required,Validators.maxLength(255)]),
+      annualSalary:new FormControl("",[Validators.required]),
       designation:new FormControl("",[Validators.maxLength(255)]),
-      work_exp:new FormControl(),
-      addressline1_e:new FormControl("",[Validators.required,Validators.maxLength(255)]),
-      addressline2_e:new FormControl("",[Validators.maxLength(255)]),
-      city_e:new FormControl("",[Validators.required,Validators.maxLength(255)]),
-      state_e:new FormControl("",[Validators.required,Validators.maxLength(255)]),
-      postalcode_e:new FormControl("",[Validators.required]), 
+      workExperienceYears:new FormControl(),
+      workExperienceMonth:new FormControl(),
+      employerAddress1:new FormControl("",[Validators.required,Validators.maxLength(255)]),
+      employerAddress2:new FormControl("",[Validators.maxLength(255)]),
+      employerCity:new FormControl("",[Validators.required,Validators.maxLength(255)]),
+      employerState:new FormControl("",[Validators.required,Validators.maxLength(255)]),
+      employerPostalCode:new FormControl("",[Validators.required]), 
     });
   }
  /* public handleClick4(){
@@ -66,12 +67,14 @@ export class SecondPageSubmitComponent {
 
   public onSubmit(data){
    // data.applicantId=this.loanData.id;
-    this.service.saveDetails(data).subscribe(
-      res=>{
-        this.applicantId=res.id;
+    this.service.saveDetails(data).subscribe(res=>{
+        //this.applicantId=res.id;
         this.router.navigate(['/fifthPageSuccess']);
       }
-    )
-  }
+    //   ,
+    //  error=>{
+    //    this.alertifyService.error('Problem occured!\n'+error);
+    //  }
+    );}
   
 }

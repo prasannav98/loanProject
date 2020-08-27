@@ -1,6 +1,8 @@
 package com.Team3.loanProject.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.sql.Date;
 
@@ -236,36 +238,63 @@ public class CreateLoanRequest {
         ApplicantAnnualSalary = applicantAnnualSalary;
     }
 
-
+    @JsonProperty("annualSalary")
     private int ApplicantAnnualSalary;
+    @JsonProperty("workExperienceYears")
     private int ApplicantWorkExperienceYears;
+    @JsonProperty("workExperienceMonth")
     private int ApplicantWorkExperienceMonth;
+    @JsonProperty("loanAmount")
     private int ApplicantloanAmount;
 
     @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
+    @JsonProperty("dateofBirth")
     private String Applicantdob;
+    @JsonProperty("loanPurpose")
     private String ApplicantloanPurpose;
+    @JsonProperty("description")
     private String Applicantdescription;
+    @JsonProperty("ssnnumber")
     private String ApplicantSSN;
+    @JsonProperty("firstName")
     private String ApplicantfirstName;
+    @JsonProperty("middleName")
     private String ApplicantmiddleName;
+    @JsonProperty("lastName")
     private String ApplicantlastName;
+    @JsonProperty("maritalStatus")
     private String ApplicantmaritalStatus;
+    @JsonProperty("addressLine1")
     private String ApplicantaddrLine1;
+    @JsonProperty("addressLine2")
     private String ApplicantaddrLine2;
+    @JsonProperty("city")
     private String Applicantcity;
+    @JsonProperty("state")
     private String Applicantstate;
+    @JsonProperty("postalCode")
     private String ApplicantpostalCode;
+    @JsonProperty("homePhone")
     private String ApplicanthomePhone;
+    @JsonProperty("officePhone")
     private String ApplicantofficePhone ;
+    @JsonProperty("mobile")
     private String Applicantmobile;
+    @JsonProperty("emailAddress")
     private String Applicantemail;
+    @JsonProperty("designation")
     private String Applicantdesignation;
+    @JsonProperty("employername")
     private String ApplicantEmployerName;
+    @JsonProperty("employerAddress1")
     private String ApplicantEmployerAddr1;
+    @JsonProperty("employerAddress2")
     private String ApplicantEmployerAddr2;
+    @JsonProperty("employerCity")
     private String ApplicantEmployerCity;
+    @JsonProperty("employerState")
     private String ApplicantEmployerState;
+    @JsonProperty("employerPostalCode")
     private String ApplicantEmployerPostalCode;
 
 }

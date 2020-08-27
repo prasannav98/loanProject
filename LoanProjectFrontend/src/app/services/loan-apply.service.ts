@@ -51,10 +51,10 @@ export class LoanApplyService {
       })
     )
   }
-  public success(value):any{
-    console.log("success");
-  }
-  public error(value):any{
-    console.error("failure");
-  }
+  // public success(value):any{
+  //   console.log("success");
+  // }
+  // public error(value):any{
+  //   console.error("failure");
+  // }
 }

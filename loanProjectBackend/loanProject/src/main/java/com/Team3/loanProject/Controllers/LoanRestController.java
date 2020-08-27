@@ -12,6 +12,7 @@ import com.Team3.loanProject.Services.ApplicantService;
 import com.Team3.loanProject.dto.CreateLoanRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.jdbc.NamedParameterJdbcOperationsDependsOnPostProcessor;
+import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,8 +46,8 @@ public class LoanRestController {
 
     @RequestMapping(value = "/apply", method = RequestMethod.POST)
     @Transactional
-    public Applicant postLoan(CreateLoanRequest request){
-//
+    public Applicant postLoan(@RequestBody CreateLoanRequest request){
+
 //        Applicant applicant= new Applicant();
 //
 //        applicant.setSSNNumber("q");
@@ -84,19 +85,17 @@ public class LoanRestController {
 //        applicant.setDeclineReason("In Progress");
 //
 //        Applicant a=applicantService.createApplicant(applicant);
-//
-//        a.setScore("20");
-//
-        String ad;
-        ad=request.getApplicantaddrLine1();
 
+//
+//
+//
         Applicant applicant= new Applicant();
 
         applicant.setSSNNumber(request.getApplicantSSN());
         applicant.setFirstName(request.getApplicantfirstName());
         applicant.setMiddleName(request.getApplicantmiddleName());
         applicant.setLastName(request.getApplicantlastName());
-        applicant.setDateofBirth(Date.valueOf(LocalDate.now()));
+        applicant.setDateofBirth(Date.valueOf(request.getApplicantdob()));
         applicant.setDateSubmitted(Date.valueOf(LocalDate.now()));
         applicant.setMaritalStatus(request.getApplicantmaritalStatus());
         applicant.setAddressLine1(request.getApplicantaddrLine1());
@@ -129,7 +128,8 @@ public class LoanRestController {
         Applicant applicant1=applicantService.createApplicant(applicant);
 
         boolean valid=TRUE;
-        LocalDate l = applicant.getDateofBirth().toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //specify year, month, date directly
+
+        LocalDate l = applicant.getDateofBirth().toLocalDate(); //specify year, month, date directly
         LocalDate now = LocalDate.now(); //gets localDate Period
         Period diff = Period.between(l, now); //difference between the dates is calculated
 
@@ -150,6 +150,11 @@ public class LoanRestController {
                 applicant.setApplicationStatus("Declined");
                 applicant.setDeclineReason(" "); //prassanna take
             }
+        }
+        else{
+            applicant.setScore("0");
+            applicant.setApplicationStatus("Declined");
+            applicant.setDeclineReason("Validations Failed");
         }
 
         applicantService.updateApplicant(applicant1);

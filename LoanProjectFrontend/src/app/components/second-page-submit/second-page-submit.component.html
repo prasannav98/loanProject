@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Submit Application</h1>
-    <form [formGroup]="personForm"  class="form-horizontal" (ngSubmit)="onSubmit(personForm.value)">
+    <form [formGroup]="personForm"  class="form-horizontal" >
           <div class="form-group">
               <label class="control-label col-sm-2">First Name</label>
               <div class="col-sm-10">
@@ -34,28 +34,28 @@
           <div  class="form-group">
                 <label class="control-label col-sm-2">Date of Birth</label>
                 <div class="col-sm-10">
-                        <input  type="text" class="form-control" formControlName="dob"  placeholder="Date of birth" name="dob"/>
-                        <span style="color:red" *ngIf="personForm.controls['dob'].hasError('required')">Date of birth is required</span>
+                        <input  type="text" class="form-control" formControlName="dateofBirth"  placeholder="Date of birth" name="dateofBirth"/>
+                        <span style="color:red" *ngIf="personForm.controls['dateofBirth'].hasError('required')">Date of birth is required</span>
                 </div>
           </div>
           <div  class="form-group">
                 <label class="control-label col-sm-2">Marital Status</label>
                 <div class="col-sm-10">
-                      <select class="form-control" formControlName="marital">
+                      <select class="form-control" formControlName="maritalStatus">
                         <option value="Single">Single</option>
                         <option value="Married">Married</option>
                         <option value="Separated">Separated</option>
                         <option value="Divorced">Divorced</option>
                         <option value="Widowed">Widowed</option>
                       </select>
-                      <span style="color:red" *ngIf="personForm.controls['dob'].hasError('required')">Marital Status is required</span>
+                      <span style="color:red" *ngIf="personForm.controls['maritalStatus'].hasError('required')">Marital Status is required</span>
                 </div>      
           </div>
           <div  class="form-group">
                 <label class="control-label col-sm-2">SSN Number</label>
                 <div class="col-sm-10">
-                        <input  type="text" class="form-control" formControlName="ssn"  placeholder="SSN Number" />
-                        <span style="color:red" *ngIf="personForm.controls['ssn'].hasError('required')">SSN number is required</span>
+                        <input  type="text" class="form-control" formControlName="ssnnumber"  placeholder="SSN Number" />
+                        <span style="color:red" *ngIf="personForm.controls['ssnnumber'].hasError('required')">SSN number is required</span>
                 </div>
           </div>
           <div  class="form-group">
@@ -88,17 +88,17 @@
               <div class="form-group">
                     <label  class="control-label col-sm-2">Address Line 1</label>
                     <div class="col-sm-10">
-                      <input  type="text" class="form-control" name="addressline1" formControlName="addressline1" placeholder="Address Line 1"/>
-                      <span  style="color:red" *ngIf="personForm.controls['addressline1'].hasError('required')">Address line 1 is Required </span>
-                      <span style="color:red" *ngIf="personForm.controls['addressline1'].hasError('maxlength')">Address is too long</span> 
+                      <input  type="text" class="form-control" name="addressLine1" formControlName="addressLine1" placeholder="Address Line 1"/>
+                      <span  style="color:red" *ngIf="personForm.controls['addressLine1'].hasError('required')">Address line 1 is Required </span>
+                      <span style="color:red" *ngIf="personForm.controls['addressLine1'].hasError('maxlength')">Address is too long</span> 
                     </div>
               </div>
               <div class="form-group">
                    <label  class="control-label col-sm-2">Address Line 2</label>
                    <div class="col-sm-10">
-                   <input  type="text" class="form-control" formControlName="addressline2" placeholder="Address Line 2"/>
-                   <span  style="color:red" *ngIf="personForm.controls['addressline2'].hasError('required')">Address line 2 is Required </span>
-                   <span style="color:red" *ngIf="personForm.controls['addressline2'].hasError('maxlength')">Address is too long</span> 
+                   <input  type="text" class="form-control" formControlName="addressLine2" placeholder="Address Line 2"/>
+                   <span  style="color:red" *ngIf="personForm.controls['addressLine2'].hasError('required')">Address line 2 is Required </span>
+                   <span style="color:red" *ngIf="personForm.controls['addressLine2'].hasError('maxlength')">Address is too long</span> 
                    </div>
               </div>
               <div class="form-group">
@@ -120,9 +120,9 @@
               <div class="form-group">
                 <label  class="control-label col-sm-2">Postal Code</label>
                 <div class="col-sm-10">
-                <input  type="number" class="form-control" formControlName="postalcode"  placeholder="12345"/>
-                <span   style="color:red"  *ngIf="personForm.controls['postalcode'].hasError('required')">Postal code is Required </span>
-                <span   style="color:red"  *ngIf="personForm.controls['postalcode'].hasError('maxlength')">Only 5 digits </span>
+                <input  type="number" class="form-control" formControlName="postalCode"  placeholder="12345"/>
+                <span   style="color:red"  *ngIf="personForm.controls['postalCode'].hasError('required')">Postal code is Required </span>
+                <span   style="color:red"  *ngIf="personForm.controls['postalCode'].hasError('maxlength')">Only 5 digits </span>
                 </div>
               </div>
     
@@ -130,14 +130,14 @@
               <div class="form-group">
                     <label  class="control-label col-sm-2">Home Phone</label>
                     <div class="col-sm-10">
-                    <input  type="text" class="form-control" formControlName="hphone"  placeholder="12345"/>
-                    <span  style="color:red" *ngIf="personForm.controls['hphone'].hasError('required')">Home Phone is Required </span>
+                    <input  type="text" class="form-control" formControlName="homePhone"  placeholder="12345"/>
+                    <span  style="color:red" *ngIf="personForm.controls['homePhone'].hasError('required')">Home Phone is Required </span>
                       </div>
               </div>
               <div class="form-group">
                    <label  class="control-label col-sm-2">Office Phone</label>
                    <div class="col-sm-10">
-                   <input  type="text" class="form-control" formControlName="ophone"  placeholder="12345"/>
+                   <input  type="text" class="form-control" formControlName="officePhone"  placeholder="12345"/>
                    </div>
               </div>
               <div class="form-group">
@@ -150,8 +150,8 @@
               <div class="form-group">
                 <label  class="control-label col-sm-2">Email Address</label>
                 <div class="col-sm-10">
-                <input  type="email" class="form-control" formControlName="email"  placeholder="test@test.com"/>
-                <span   style="color:red"  *ngIf="personForm.controls['email'].hasError('required')">Email Address is Required </span>
+                <input  type="emailAddress" class="form-control" formControlName="emailAddress"  placeholder="test@test.com"/>
+                <span   style="color:red"  *ngIf="personForm.controls['emailAddress'].hasError('required')">Email Address is Required </span>
                 </div>
               </div>
     
@@ -159,16 +159,16 @@
               <div class="form-group">
                     <label  class="control-label col-sm-2">Employer name</label>
                     <div class="col-sm-10">
-                    <input  type="text" class="form-control" formControlName="emp_name"  placeholder="Name"/>
-                    <span  style="color:red" *ngIf="personForm.controls['emp_name'].hasError('required')">Employee Name is Required </span>
-                    <span style="color:red" *ngIf="personForm.controls['emp_name'].hasError('maxlength')">Employee Name is too long</span> 
+                    <input  type="text" class="form-control" formControlName="employername"  placeholder="Name"/>
+                    <span  style="color:red" *ngIf="personForm.controls['employername'].hasError('required')">Employee Name is Required </span>
+                    <span style="color:red" *ngIf="personForm.controls['employername'].hasError('maxlength')">Employee Name is too long</span> 
                     </div>
               </div>
               <div class="form-group">
                    <label  class="control-label col-sm-2">Annual Salary</label>
                    <div class="col-sm-10">
-                   <input  type="text" class="form-control" formControlName="annual_salary"  placeholder="Annual Salary"/>
-                   <span  style="color:red" *ngIf="personForm.controls['annual_salary'].hasError('required')">Employee Salary details is Required </span>
+                   <input  type="text" class="form-control" formControlName="annualSalary"  placeholder="Annual Salary"/>
+                   <span  style="color:red" *ngIf="personForm.controls['annualSalary'].hasError('required')">Employee Salary details is Required </span>
                   </div>
               </div>
               <div class="form-group">
@@ -181,47 +181,48 @@
               <div class="form-group">
                 <label  class="control-label col-sm-2">Work Experience</label>
                 <div class="col-sm-10">
-                <input  type="text" class="form-control" formControlName="work_exp"  placeholder="Work Experience"/>
-                </div>
+                <input  type="text" class="form-control" formControlName="workExperienceMonth"  placeholder="Work Experience Months"/>
+                <input  type="text" class="form-control" formControlName="workExperienceYears"  placeholder="Work Experience Years"/>
+                  </div>
               </div>
           
                       <h4>Address</h4>
                       <div class="form-group">
                             <label  class="control-label col-sm-2">Address Line 1</label>
                             <div class="col-sm-10">  
-                            <input  type="text" class="form-control" formControlName="addressline1_e"  placeholder="Address Line 1"/>
-                            <span  style="color:red" *ngIf="personForm.controls['addressline1_e'].hasError('required')">Employee Address is Required </span>
-                             <span style="color:red" *ngIf="personForm.controls['addressline1_e'].hasError('maxlength')">Employee Address is too long</span> 
+                            <input  type="text" class="form-control" formControlName="employerAddress1"  placeholder="Address Line 1"/>
+                            <span  style="color:red" *ngIf="personForm.controls['employerAddress1'].hasError('required')">Employee Address is Required </span>
+                             <span style="color:red" *ngIf="personForm.controls['employerAddress1'].hasError('maxlength')">Employee Address is too long</span> 
                             </div>
                        </div>
                       <div class="form-group">
                             <label  class="control-label col-sm-2">Address Line 2</label>
                             <div class="col-sm-10"> 
-                             <input  type="text" class="form-control" formControlName="addressline2_e"  placeholder="Address Line 2"/>
-                             <span style="color:red" *ngIf="personForm.controls['addressline2_e'].hasError('maxlength')">Employee Address is too long</span> 
+                             <input  type="text" class="form-control" formControlName="employerAddress2"  placeholder="Address Line 2"/>
+                             <span style="color:red" *ngIf="personForm.controls['employerAddress2'].hasError('maxlength')">Employee Address is too long</span> 
                              </div>
                        </div>
                       <div class="form-group">
                             <label  class="control-label col-sm-2">City</label>
                             <div class="col-sm-10"> 
-                            <input  type="text" class="form-control" formControlName="city_e"  placeholder="City"/>
-                            <span  style="color:red" *ngIf="personForm.controls['city_e'].hasError('required')">Employee city is Required </span>
-                             <span style="color:red" *ngIf="personForm.controls['city_e'].hasError('maxlength')">Employee city is too long</span> 
+                            <input  type="text" class="form-control" formControlName="employerCity"  placeholder="City"/>
+                            <span  style="color:red" *ngIf="personForm.controls['employerCity'].hasError('required')">Employee city is Required </span>
+                             <span style="color:red" *ngIf="personForm.controls['employerCity'].hasError('maxlength')">Employee city is too long</span> 
                             </div>
                       </div>
                       <div class="form-group">
                             <label class="control-label col-sm-2">State</label>
                             <div class="col-sm-10"> 
-                            <input  type="text" class="form-control" formControlName="state_e"  placeholder="State"/>
-                            <span  style="color:red" *ngIf="personForm.controls['state_e'].hasError('required')">Employee State is Required </span>
-                             <span style="color:red" *ngIf="personForm.controls['state_e'].hasError('maxlength')">Employee State is too long</span> 
+                            <input  type="text" class="form-control" formControlName="employerState"  placeholder="State"/>
+                            <span  style="color:red" *ngIf="personForm.controls['employerState'].hasError('required')">Employee State is Required </span>
+                             <span style="color:red" *ngIf="personForm.controls['employerState'].hasError('maxlength')">Employee State is too long</span> 
                             </div>
                       </div>
                       <div class="form-group">
                              <label class="control-label col-sm-2">Postal Code</label>
                              <div class="col-sm-10"> 
-                             <input  type="text" class="form-control" formControlName="postalcode_e"  placeholder="12345"/>
-                             <span  style="color:red" *ngIf="personForm.controls['postalcode_e'].hasError('required')">Employee Postal Code is Required </span>
+                             <input  type="text" class="form-control" formControlName="employerPostalCode"  placeholder="12345"/>
+                             <span  style="color:red" *ngIf="personForm.controls['employerPostalCode'].hasError('required')">Employee Postal Code is Required </span>
                              </div>
                        </div>
         
