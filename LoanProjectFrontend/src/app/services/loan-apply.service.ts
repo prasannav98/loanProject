@@ -9,8 +9,9 @@ import { Observable } from 'rxjs';
 export class LoanApplyService {
 
   loanUrl:string = "http://localhost:8080/loans";
-  loanApplicationUrl:string = "http://localhost:8080/loanApplication"
-  loanData:any;
+  loanApplicationUrl:string = "http://localhost:8080/apply"
+  loanData1:any;
+  loanData2:any;
 
   constructor(private _httpClient:HttpClient) { }
 
@@ -18,7 +19,19 @@ export class LoanApplyService {
     return this._httpClient.get(this.loanUrl).pipe(
       map(res=>{
         console.log(res);
-        this.loanData = res;
+        this.loanData1 = res;
+      },
+      error=>{
+        console.error("Error is "+error);
+      })
+    )
+  }
+
+  public getDetailOfId(id:number):any{
+    return this._httpClient.get(this.loanUrl+"/"+id).pipe(
+      map(res=>{
+        console.log(res);
+        this.loanData2=res;
       },
       error=>{
         console.error("Error is "+error);

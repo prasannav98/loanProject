@@ -12,8 +12,11 @@ import { LoanApplyService } from '../../services/loan-apply.service';
 })
 export class SecondPageSubmitComponent {
   public personForm:FormGroup;
-  public marital:string[]
-  constructor(private router:Router,private participantService : LoanApplyService,private alertifyService : LoanApplyService){}
+  public marital:string[];
+  public loanData:any;
+  public applicantId:any;
+
+  constructor(private router:Router,private participantService : LoanApplyService,private alertifyService : LoanApplyService,private service:LoanApplyService){}
 
   ngOnInit(){
     //this.marital=["Single","Married","Separated","Widowed","Divorced"]
@@ -50,7 +53,7 @@ export class SecondPageSubmitComponent {
       postalcode_e:new FormControl("",[Validators.required]), 
     });
   }
-  public handleClick4(){
+ /* public handleClick4(){
      // console.log(this.personForm.valid);
      this.participantService.saveDetails(this.personForm).subscribe(participant=>{
        this.alertifyService.success('participant successfully added');
@@ -59,6 +62,16 @@ export class SecondPageSubmitComponent {
      error=>{
        this.alertifyService.error('Problem occured!\n'+error);
      });
+  }*/
+
+  public onSubmit(data){
+   // data.applicantId=this.loanData.id;
+    this.service.saveDetails(data).subscribe(
+      res=>{
+        this.applicantId=res.id;
+        this.router.navigate(['/fifthPageSuccess']);
+      }
+    )
   }
   
 }

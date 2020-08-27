@@ -18,6 +18,13 @@ export class ThirdPageViewComponent implements OnInit {
     });
   }
 
+  public onPress(id:number){
+    this._service.getDetailOfId(id).subscribe(res=>{
+      console.log(this._service.loanData2)
+      this.router.navigate(['/fourthPageView'])
+    })
+  }
+  
   public handleClick3(){
     this.router.navigate(['/firstPageWelcome'])
   }

@@ -17,7 +17,7 @@
         
         <tbody>
             <tr *ngFor="let c of data">
-                <td>{{c.applicantId}}</td>
+                <td><a [routerLink]=" " (click)="onPress(applicantId)">{{applicantId}}</a></td>
                 <td>{{c.firstName+c.middleName+c.lastName}}</td>
                 <td>{{c.submitDate}}</td>
                 <td>{{c.status}}</td>
