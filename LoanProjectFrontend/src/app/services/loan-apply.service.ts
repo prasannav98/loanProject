@@ -20,6 +20,7 @@ export class LoanApplyService {
       map(res=>{
         console.log(res);
         this.loanData1 = res;
+        return this.loanData1;
       },
       error=>{
         console.error("Error is "+error);
@@ -32,6 +33,7 @@ export class LoanApplyService {
       map(res=>{
         console.log(res);
         this.loanData2=res;
+        return this.loanData2;
       },
       error=>{
         console.error("Error is "+error);

@@ -17,10 +17,10 @@
         
         <tbody>
             <tr *ngFor="let c of data">
-                <td><a [routerLink]=" " (click)="onPress(applicantId)">{{applicantId}}</a></td>
+                <td><a [routerLink]=" " (click)="onPress(c.id)">{{c.id}}</a></td>
                 <td>{{c.firstName+c.middleName+c.lastName}}</td>
-                <td>{{c.submitDate}}</td>
-                <td>{{c.status}}</td>
+                <td>{{c.dateSubmitted}}</td>
+                <td>{{c.applicationStatus}}</td>
             </tr>
         </tbody>
         
