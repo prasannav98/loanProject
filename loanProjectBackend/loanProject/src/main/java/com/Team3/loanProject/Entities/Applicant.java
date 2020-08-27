@@ -1,10 +1,10 @@
 package com.Team3.loanProject.Entities;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
-@Table(name="loantable",schema = "loangiver")
+@Table(name="lltable",schema = "loangiver")
 public class Applicant  {
 
     public String getFirstName() {
@@ -55,11 +55,11 @@ public class Applicant  {
         this.SSNNumber = SSNNumber;
     }
 
-    public double getLoanAmount() {
+    public int getLoanAmount() {
         return LoanAmount;
     }
 
-    public void setLoanAmount(double loanAmount) {
+    public void setLoanAmount(int loanAmount) {
         LoanAmount = loanAmount;
     }
 
@@ -159,11 +159,11 @@ public class Applicant  {
         Employername = employername;
     }
 
-    public double getAnnualSalary() {
+    public int getAnnualSalary() {
         return AnnualSalary;
     }
 
-    public void setAnnualSalary(double annualSalary) {
+    public void setAnnualSalary(int annualSalary) {
         AnnualSalary = annualSalary;
     }
 
@@ -264,42 +264,82 @@ public class Applicant  {
         DeclineReason = declineReason;
     }
 
-    //@Column
+    public Date getDateSubmitted() {
+        return DateSubmitted;
+    }
+
+    public void setDateSubmitted(Date dateSubmitted) {
+        DateSubmitted = dateSubmitted;
+    }
+
+    @Column(name = "First_Name")
     private String FirstName;
+    @Column(name = "Middle_Name")
     private String MiddleName;
+    @Column(name = "Last_Name")
     private String LastName;
-    private	 Date DateofBirth;
+    @Column(name = "Date_of_Birth")
+    private Date DateofBirth;
+    @Column(name = "Date_Submitted")
+    private Date DateSubmitted;
+    @Column(name = "Marital_Status")
     private String MaritalStatus;
+    @Column(name = "SSN_Number")
     private String SSNNumber;
-    private double LoanAmount;
+    @Column(name = "Loan_Amount")
+    private int LoanAmount;
+    @Column(name = "Loan_Purpose")
     private String LoanPurpose;
+    @Column(name = "Description")
     private String Description;
+    @Column(name = "Address_Line_1")
     private String AddressLine1;
+    @Column(name = "Address_Line_2")
     private String AddressLine2;
+    @Column(name = "City")
     private String City;
+    @Column(name = "State")
     private String State;
+    @Column(name = "Postal_Code")
     private String PostalCode;
+    @Column(name = "Home_Phone")
     private String HomePhone;
+    @Column(name = "Office_Phone")
     private String OfficePhone;
+    @Column(name = "Mobile")
     private String Mobile;
+    @Column(name = "Email_Address")
     private String EmailAddress;
+    @Column(name = "Employer_name")
     private String Employername;
-    private double AnnualSalary;
+    @Column(name = "Annual_Salary")
+    private int AnnualSalary;
+    @Column(name = "Employer_Address_1")
     private String EmployerAddress1;
+    @Column(name = "Employer_Address_2")
     private String EmployerAddress2;
+    @Column(name = "Employer_City")
     private String EmployerCity;
+    @Column(name = "Employer_State")
     private String EmployerState;
+    @Column(name = "Employer_Postal_Code")
     private String EmployerPostalCode;
+    @Column(name = "Designation")
     private String Designation;
+    @Column(name = "Work_Experience_Years")
     private int WorkExperienceYears;
+    @Column(name = "Work_Experience_Month")
     private int WorkExperienceMonth;
+    @Column(name = "Application_Status")
     private String ApplicationStatus;
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
 
+    @Column(name = "Score")
     private String Score;
+    @Column(name = "Decline_Reason")
     private String DeclineReason;
 
 

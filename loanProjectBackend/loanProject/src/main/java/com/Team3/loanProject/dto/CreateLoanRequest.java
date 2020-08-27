@@ -2,7 +2,7 @@ package com.Team3.loanProject.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import java.util.Date;
+import java.sql.Date;
 
 
 public class CreateLoanRequest {
@@ -12,19 +12,19 @@ public class CreateLoanRequest {
     //    private String ApplicantScore;
 
 
-    public Date getApplicantdob() {
+    public String getApplicantdob() {
         return Applicantdob;
     }
 
-    public void setApplicantdob(Date applicantdob) {
+    public void setApplicantdob(String applicantdob) {
         Applicantdob = applicantdob;
     }
 
-    public double getApplicantloanAmount() {
+    public int getApplicantloanAmount() {
         return ApplicantloanAmount;
     }
 
-    public void setApplicantloanAmount(double applicantloanAmount) {
+    public void setApplicantloanAmount(int applicantloanAmount) {
         ApplicantloanAmount = applicantloanAmount;
     }
 
@@ -172,14 +172,6 @@ public class CreateLoanRequest {
         Applicantemail = applicantemail;
     }
 
-    public double getApplicantannualsalary() {
-        return Applicantannualsalary;
-    }
-
-    public void setApplicantannualsalary(double applicantannualsalary) {
-        Applicantannualsalary = applicantannualsalary;
-    }
-
     public String getApplicantdesignation() {
         return Applicantdesignation;
     }
@@ -236,15 +228,24 @@ public class CreateLoanRequest {
         ApplicantEmployerPostalCode = applicantEmployerPostalCode;
     }
 
-    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
-    private Date Applicantdob;
-    private double ApplicantloanAmount;
-    private String ApplicantloanPurpose;
-    private String Applicantdescription;
+    public int getApplicantAnnualSalary() {
+        return ApplicantAnnualSalary;
+    }
+
+    public void setApplicantAnnualSalary(int applicantAnnualSalary) {
+        ApplicantAnnualSalary = applicantAnnualSalary;
+    }
 
 
+    private int ApplicantAnnualSalary;
     private int ApplicantWorkExperienceYears;
     private int ApplicantWorkExperienceMonth;
+    private int ApplicantloanAmount;
+
+    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
+    private String Applicantdob;
+    private String ApplicantloanPurpose;
+    private String Applicantdescription;
     private String ApplicantSSN;
     private String ApplicantfirstName;
     private String ApplicantmiddleName;
@@ -259,7 +260,6 @@ public class CreateLoanRequest {
     private String ApplicantofficePhone ;
     private String Applicantmobile;
     private String Applicantemail;
-    private double Applicantannualsalary;
     private String Applicantdesignation;
     private String ApplicantEmployerName;
     private String ApplicantEmployerAddr1;
@@ -267,7 +267,5 @@ public class CreateLoanRequest {
     private String ApplicantEmployerCity;
     private String ApplicantEmployerState;
     private String ApplicantEmployerPostalCode;
-
-
 
 }

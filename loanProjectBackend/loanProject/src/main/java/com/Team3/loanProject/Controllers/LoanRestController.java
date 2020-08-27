@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.*;
 import java.util.Calendar;
-import java.util.Date;
+import java.sql.Date;
 
 import com.Team3.loanProject.Entities.Applicant;
 import com.Team3.loanProject.Repositories.ApplicantRepository;
@@ -17,20 +17,20 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.Date;
 import java.util.List;
 
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
 
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class LoanRestController {
 
     @Autowired
     ApplicantRepository applicantRepository;
 
+    @Autowired
     private ApplicantService applicantService;
 
     @RequestMapping(value = "/home")
@@ -46,6 +46,49 @@ public class LoanRestController {
     @RequestMapping(value = "/apply", method = RequestMethod.POST)
     @Transactional
     public Applicant postLoan(CreateLoanRequest request){
+//
+//        Applicant applicant= new Applicant();
+//
+//        applicant.setSSNNumber("q");
+//        applicant.setFirstName("w");
+//        applicant.setMiddleName("er");
+//        applicant.setLastName("e");
+//        applicant.setDateofBirth(Date.valueOf("1998-1-1"));
+//        applicant.setDateSubmitted(Date.valueOf("2020-1-1"));
+//        applicant.setMaritalStatus("request.getApplicantmaritalStatus()");
+//        applicant.setAddressLine1("request.getApplicantaddrLine1()");
+//        applicant.setAddressLine2("request.getApplicantaddrLine2()");
+//        applicant.setCity("request.getApplicantcity()");
+//        applicant.setState("request.getApplicantstate()");
+//        applicant.setPostalCode("a");
+//        applicant.setDescription("s");
+//        applicant.setLoanAmount(874);
+//        applicant.setLoanPurpose("a");
+//        applicant.setAnnualSalary(4457);
+//        applicant.setEmployername("request.getApplicantEmployerName()");
+//        applicant.setEmployerAddress1("request.getApplicantEmployerAddr1()");
+//        applicant.setEmployerAddress2("request.getApplicantEmployerAddr2()");
+//        applicant.setEmployerCity("request.getApplicantEmployerCity()");
+//        applicant.setEmployerState("request.getApplicantEmployerState()");
+//        applicant.setEmployerPostalCode("a");
+//        applicant.setDesignation("request.getApplicantdesignation()");
+//        applicant.setMobile("a");
+//        applicant.setHomePhone("s");
+//        applicant.setOfficePhone("s");
+//        applicant.setEmailAddress("s");
+//        applicant.setWorkExperienceMonth(5);
+//        applicant.setWorkExperienceYears(1);
+//
+//        applicant.setApplicationStatus("In Progress");
+//        applicant.setScore("-");
+//        applicant.setDeclineReason("In Progress");
+//
+//        Applicant a=applicantService.createApplicant(applicant);
+//
+//        a.setScore("20");
+//
+        String ad;
+        ad=request.getApplicantaddrLine1();
 
         Applicant applicant= new Applicant();
 
@@ -53,7 +96,8 @@ public class LoanRestController {
         applicant.setFirstName(request.getApplicantfirstName());
         applicant.setMiddleName(request.getApplicantmiddleName());
         applicant.setLastName(request.getApplicantlastName());
-        applicant.setDateofBirth(request.getApplicantdob());
+        applicant.setDateofBirth(Date.valueOf(LocalDate.now()));
+        applicant.setDateSubmitted(Date.valueOf(LocalDate.now()));
         applicant.setMaritalStatus(request.getApplicantmaritalStatus());
         applicant.setAddressLine1(request.getApplicantaddrLine1());
         applicant.setAddressLine2(request.getApplicantaddrLine2());
@@ -63,9 +107,8 @@ public class LoanRestController {
         applicant.setDescription(request.getApplicantdescription());
         applicant.setLoanAmount(request.getApplicantloanAmount());
         applicant.setLoanPurpose(request.getApplicantloanPurpose());
+        applicant.setAnnualSalary(request.getApplicantAnnualSalary());
         applicant.setEmployername(request.getApplicantEmployerName());
-        applicant.setCity(request.getApplicantEmployerCity());
-        applicant.setState(request.getApplicantEmployerState());
         applicant.setEmployerAddress1(request.getApplicantEmployerAddr1());
         applicant.setEmployerAddress2(request.getApplicantEmployerAddr2());
         applicant.setEmployerCity(request.getApplicantEmployerCity());
@@ -74,6 +117,7 @@ public class LoanRestController {
         applicant.setDesignation(request.getApplicantdesignation());
         applicant.setHomePhone(request.getApplicanthomePhone());
         applicant.setOfficePhone(request.getApplicantofficePhone());
+        applicant.setMobile(request.getApplicantmobile());
         applicant.setEmailAddress(request.getApplicantemail());
         applicant.setWorkExperienceMonth(request.getApplicantWorkExperienceMonth());
         applicant.setWorkExperienceYears(request.getApplicantWorkExperienceYears());
@@ -108,7 +152,7 @@ public class LoanRestController {
             }
         }
 
-        applicantService.updateApplicant(applicant);
+        applicantService.updateApplicant(applicant1);
 
         return null;
     }

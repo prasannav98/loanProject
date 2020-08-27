@@ -16,6 +16,8 @@ public class ApplicantService {
     @Autowired
     ApplicantRepository applicantRepository;
 
+
+
     public Applicant createApplicant(Applicant applicant){
         return applicantRepository.save(applicant);
     }
