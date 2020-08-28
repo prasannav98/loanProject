@@ -146,6 +146,7 @@ public class LoanRestController {
             }
             else{
                 applicant.setApplicationStatus("Declined");
+
                 applicant.setDeclineReason(" "); //prassanna take
             }
         }

@@ -1,6 +1,6 @@
 use loangiver
 
-CREATE TABLE `loangiver`.`lltable` (
+CREATE TABLE `loangiver`.`Applicant` (
   `First_Name` VARCHAR(255) NOT NULL,
   `Middle_Name` VARCHAR(255) NULL,
   `Last_Name` VARCHAR(255) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE `loangiver`.`lltable` (
   `Address_Line_2` VARCHAR(255) NULL,
   `City` VARCHAR(255) NOT NULL,
   `State` VARCHAR(255) NOT NULL,
-  `Postal_Code` VARCHAR(5) NOT NULL,
+  `Postal_Code` VARCHAR(15) NOT NULL,
   `Home_Phone` VARCHAR(10) NOT NULL,
   `Office_Phone` VARCHAR(10) NULL,
   `Mobile` VARCHAR(10) NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE `loangiver`.`lltable` (
   `Employer_Address_2` VARCHAR(255) NULL,
   `Employer_City` VARCHAR(255) NOT NULL,
   `Employer_State` VARCHAR(255) NOT NULL,
-  `Employer_Postal_Code` VARCHAR(5) NOT NULL,
+  `Employer_Postal_Code` VARCHAR(15) NOT NULL,
   `Designation` VARCHAR(255) NULL,
   `Work_Experience_Years` INT NOT NULL,
   `Work_Experience_Month` INT NOT NULL,
@@ -39,4 +39,4 @@ CREATE TABLE `loangiver`.`lltable` (
   
   use loangiver
   
- Select * from lltable
+  Select * from applicant
