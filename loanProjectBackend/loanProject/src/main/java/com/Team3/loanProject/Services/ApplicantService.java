@@ -37,7 +37,7 @@ public class ApplicantService {
     }
 
     public int calculateScore(Applicant applicant){
-        return 0;
+        return 11;
     }
 
 }

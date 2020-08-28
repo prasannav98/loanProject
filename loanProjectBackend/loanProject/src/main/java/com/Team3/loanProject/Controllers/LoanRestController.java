@@ -86,9 +86,7 @@ public class LoanRestController {
 //
 //        Applicant a=applicantService.createApplicant(applicant);
 
-//
-//
-//
+
         Applicant applicant= new Applicant();
 
         applicant.setSSNNumber(request.getApplicantSSN());
