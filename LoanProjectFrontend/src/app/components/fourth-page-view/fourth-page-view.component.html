@@ -8,7 +8,44 @@
     Application ID : {{data.id}}<br/>
     Application Status : {{data.applicationStatus}}<br/>
     Score : {{data.score}}<br/>
-    Decline Reason : {{data.declineReason}}<br/>
+    Decline Reason : {{data.declineReason}}<br/><br/>
+    </div>
+    <div  >
+    First Name : {{data.firstName}}<br/> 
+    Middle Name : {{data.middleName}}<br/> 
+    Last Name : {{data.lastName}}<br/> 
+    Date of Birth : {{data.dateofBirth}}<br/> 
+    Marital Status : {{data.maritalStatus}}<br/> 
+    SSN Number : {{data.ssnnumber}}<br/> 
+    Loan Amount : {{data.loanAmount}}<br/>
+    Loan Purpose : {{data.loanPurpose}}<br/>
+    Description : {{data.description}}<br/><br/>
+    Address<br/>
+        Address Line 1 : {{data.addressLine1}}<br/>
+        Address Line 1 : {{data.addressLine2}}<br/>
+        City : {{data.city}}<br/>
+        State : {{data.state}}<br/>
+        Postal Code : {{data.postalCode}}<br/><br/>
+    Contact Information<br/>
+        Home Phone : {{data.homePhone}}<br/>
+        Office Phone : {{data.officePhone}}<br/>
+        Mobile : {{data.mobile}}<br/>
+        Email Address  : {{data.emailAddress}}<br/><br/>
+    Employment Details<br/>
+        Employer Name : {{data.employername}}<br/>
+        Annual Salary : {{data.annualSalary}}<br/>
+        Work Experience<br/>
+            Years : {{data.workExperienceYears}} Months: : {{data.workExperienceMonth}}<br/>
+        Designation : {{data.designation}}<br/><br/>
+        Employer Address<br/>
+            Employer Address Line 1 : {{data.employerAddress1}}<br/>
+            Employer Address Line 1 : {{data.employerAddress2}}<br/>
+            Employer City : {{data.employerCity}}<br/>
+            Employer State : {{data.employerState}}<br/>
+            Employer Postal Code  : {{data.employerPostalCode}}<br/><br/>
+    </div>
+    <div align="center">
+            <button  (click)="handleClick3()" type="button">Back</button>
     </div>
 </body>
 </html>

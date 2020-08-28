@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name="applicant",schema = "loangiver")
+@Table(name="applicanttable",schema = "loangiver")
 public class Applicant  {
 
     public String getFirstName() {

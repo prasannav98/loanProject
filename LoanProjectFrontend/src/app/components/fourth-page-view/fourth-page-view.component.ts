@@ -16,4 +16,9 @@ export class FourthPageViewComponent implements OnInit {
   ngOnInit(): void {
     this.data = this._service.loanData2;
   }  
+
+  public handleClick3(){
+    this.router.navigate(['/thirdPageView'])
+  }
+
 }
