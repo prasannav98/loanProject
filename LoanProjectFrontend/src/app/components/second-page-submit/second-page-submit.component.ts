@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoanApplyService } from '../../services/loan-apply.service';
 
+
 @Component({
   selector: 'app-second-page-submit',
   templateUrl: './second-page-submit.component.html',
@@ -15,6 +16,7 @@ export class SecondPageSubmitComponent {
   public marital:string[];
   public loanData:any;
   public applicantId:any;
+  
 
   constructor(private router:Router,private participantService : LoanApplyService,private alertifyService : LoanApplyService,private service:LoanApplyService){}
 

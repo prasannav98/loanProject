@@ -131,9 +131,18 @@ public class LoanRestController {
         LocalDate now = LocalDate.now(); //gets localDate Period
         Period diff = Period.between(l, now); //difference between the dates is calculated
 
-        if(applicant.getAnnualSalary()<10000) valid=FALSE;
-        else if(diff.getYears()<18||diff.getYears()>65) valid=FALSE;
-        else if(applicant.getWorkExperienceYears()<1&&applicant.getWorkExperienceMonth()<6) valid=FALSE;
+        if(applicant.getAnnualSalary()<10000){
+            valid=FALSE;
+            applicant.setDeclineReason("Declined at FrontEnd - Salary is less than $10000");
+        }
+        else if(diff.getYears()<18||diff.getYears()>65) {
+            valid=FALSE;
+            applicant.setDeclineReason("Declined at FrontEnd - Age not Age Group in 18-65");
+        }
+        else if(applicant.getWorkExperienceYears()<1&&applicant.getWorkExperienceMonth()<6){
+            valid=FALSE;
+            applicant.setDeclineReason("Declined at FrontEnd - Work Experience is less than 6 months");
+        }
 
         int score=0;
 

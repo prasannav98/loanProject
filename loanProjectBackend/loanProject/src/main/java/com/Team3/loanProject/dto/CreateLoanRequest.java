@@ -247,7 +247,7 @@ public class CreateLoanRequest {
     @JsonProperty("loanAmount")
     private int ApplicantloanAmount;
 
-    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
+//    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
     @JsonProperty("dateofBirth")
     private String Applicantdob;
     @JsonProperty("loanPurpose")
