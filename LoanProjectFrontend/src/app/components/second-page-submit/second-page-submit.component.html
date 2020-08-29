@@ -62,8 +62,8 @@
           <div  class="form-group">
                 <label class="control-label col-sm-2">Loan Amount</label>
                 <div class="col-sm-10">
-                        <input  type="number" class="form-control" formControlName="loanAmount"  placeholder="loanAmount" />
-                        <span style="color:red" *ngIf="personForm.controls['loanAmount'].hasError('required')">Loan Amount is required</span>
+                  <input  type="number" class="form-control" formControlName="loanAmount"  placeholder="loanAmount in $" />
+                  <span style="color:red" *ngIf="personForm.controls['loanAmount'].hasError('required')">Loan Amount is required and should be in $</span>
                       </div>
           </div>
           <div  class="form-group">
@@ -121,9 +121,8 @@
               <div class="form-group">
                 <label  class="control-label col-sm-2">Postal Code</label>
                 <div class="col-sm-10">
-                <input  type="number" class="form-control" formControlName="postalCode"  placeholder="12345"/>
-                <span   style="color:red"  *ngIf="personForm.controls['postalCode'].hasError('required')">Postal code is Required </span>
-                <span   style="color:red"  *ngIf="personForm.controls['postalCode'].hasError('maxlength')">Only 5 digits </span>
+                  <input  type="text" digitOnly placeholder="12345" class="form-control" formControlName="postalCode"   maxlength="5"/>
+                  <span   style="color:red"  *ngIf="personForm.controls['postalCode'].hasError('required')">Postal code is Required and should be in numbers</span>
                 </div>
               </div>
     
@@ -131,27 +130,27 @@
               <div class="form-group">
                     <label  class="control-label col-sm-2">Home Phone</label>
                     <div class="col-sm-10">
-                    <input  type="text" class="form-control" formControlName="homePhone"  placeholder="12345"/>
+                    <input  type="text" class="form-control" formControlName="homePhone"  digitOnly placeholder="12345" maxlength="10"/>
                     <span  style="color:red" *ngIf="personForm.controls['homePhone'].hasError('required')">Home Phone is Required </span>
                       </div>
               </div>
               <div class="form-group">
                    <label  class="control-label col-sm-2">Office Phone</label>
                    <div class="col-sm-10">
-                   <input  type="text" class="form-control" formControlName="officePhone"  placeholder="12345"/>
+                   <input  type="text" class="form-control" formControlName="officePhone"  digitOnly placeholder="12345" maxlength="10"/>
                    </div>
               </div>
               <div class="form-group">
                    <label  class="control-label col-sm-2">Mobile</label>
                    <div class="col-sm-10">
-                   <input  type="text" class="form-control" formControlName="mobile"  placeholder="12345"/>
+                   <input  type="text" class="form-control" formControlName="mobile"  digitOnly placeholder="12345" maxlength="10"/>
                    <span  style="color:red"  *ngIf="personForm.controls['mobile'].hasError('required')">Mobile Number is Required </span>
                 </div>
               </div>
               <div class="form-group">
                 <label  class="control-label col-sm-2">Email Address</label>
                 <div class="col-sm-10">
-                <input  type="emailAddress" class="form-control" formControlName="emailAddress"  placeholder="test@test.com"/>
+                <input  type="email" class="form-control" formControlName="emailAddress"  placeholder="test@test.com"/>
                 <span   style="color:red"  *ngIf="personForm.controls['emailAddress'].hasError('required')">Email Address is Required </span>
                 </div>
               </div>
@@ -168,8 +167,8 @@
               <div class="form-group">
                    <label  class="control-label col-sm-2">Annual Salary</label>
                    <div class="col-sm-10">
-                   <input  type="text" class="form-control" formControlName="annualSalary"  placeholder="Annual Salary"/>
-                   <span  style="color:red" *ngIf="personForm.controls['annualSalary'].hasError('required')">Employee Salary details is Required </span>
+                        <input  type="number" class="form-control" formControlName="annualSalary"  placeholder="Annual Salary in $"/>
+                        <span  style="color:red" *ngIf="personForm.controls['annualSalary'].hasError('required')">Employee Salary details is Required and should be in $</span>
                   </div>
               </div>
               <div class="form-group">
@@ -180,12 +179,14 @@
                   </div>
               </div>
               <div class="form-group">
-                <label  class="control-label col-sm-2">Work Experience</label>
-                <div class="col-sm-10">
-                <input  type="text" class="form-control" formControlName="workExperienceMonth"  placeholder="Work Experience Months"/>
-                <input  type="text" class="form-control" formControlName="workExperienceYears"  placeholder="Work Experience Years"/>
-                  </div>
-              </div>
+                  <label  class="control-label col-sm-2">Work Experience</label>
+                  <div class="col-sm-10">
+                    <label  class="control-label col-sm-0">Years : </label>
+                  <input  type="text" class="form-control" formControlName="workExperienceYears"  placeholder="Years"/>
+                    <label  class="control-label col-sm-0">Months : </label>
+                  <input  type="text" class="form-control" formControlName="workExperienceMonths"  placeholder="Months"/>
+                    </div>
+                </div>
           
                       <h4>Address</h4>
                       <div class="form-group">
@@ -222,8 +223,8 @@
                       <div class="form-group">
                              <label class="control-label col-sm-2">Postal Code</label>
                              <div class="col-sm-10"> 
-                             <input  type="text" class="form-control" formControlName="employerPostalCode"  placeholder="12345"/>
-                             <span  style="color:red" *ngIf="personForm.controls['employerPostalCode'].hasError('required')">Employee Postal Code is Required </span>
+                              <input  type="text" digitOnly placeholder="12345" class="form-control" formControlName="employerPostalCode"   maxlength="5"/>
+                              <span   style="color:red"  *ngIf="personForm.controls['employerPostalCode'].hasError('required')">Postal code is Required and should be in numbers</span>
                              </div>
                        </div>
         
