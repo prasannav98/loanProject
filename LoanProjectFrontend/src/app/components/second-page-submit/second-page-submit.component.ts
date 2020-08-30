@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoanApplyService } from '../../services/loan-apply.service';
 
-
 @Component({
   selector: 'app-second-page-submit',
   templateUrl: './second-page-submit.component.html',
@@ -16,7 +15,6 @@ export class SecondPageSubmitComponent {
   public marital:string[];
   public loanData:any;
   public applicantId:any;
-  
 
   constructor(private router:Router,private participantService : LoanApplyService,private alertifyService : LoanApplyService,private service:LoanApplyService){}
 
@@ -37,7 +35,7 @@ export class SecondPageSubmitComponent {
       addressLine2:new FormControl("",[Validators.maxLength(255)]),
       city:new FormControl("",[Validators.required,Validators.maxLength(255)]),
       state:new FormControl("",[Validators.required,Validators.maxLength(255)]),
-      postalCode:new FormControl("",[Validators.required,Validators.maxLength(5)]),
+      postalCode:new FormControl("",[Validators.required]),
   
       homePhone:new FormControl("",[Validators.required]),
       officePhone:new FormControl(),
@@ -69,6 +67,7 @@ export class SecondPageSubmitComponent {
 
   public onSubmit(data){
    // data.applicantId=this.loanData.id;
+    
     this.service.saveDetails(data).subscribe(res=>{
         //this.applicantId=res.id;
         this.router.navigate(['/fifthPageSuccess']);

@@ -1,0 +1,8 @@
+button {
+    
+    display:inline-block;
+  }
+.buttons {
+    display: flex;
+    justify-content: center;
+  }

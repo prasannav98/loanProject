@@ -3,10 +3,11 @@
         <title>View Applications</title>
     </head>
     <body>
-        <h1>View Applications</h1><br/>
-        <p>You can view the application here</p><br/>
-        <table border="1" cellspacing="5px" cellpadding="5px" align="center" style="font-size:20px">
-            <thead style="background-color:grey">
+        <div class="container">
+        <h2>View Applications</h2>
+        <p style = "font-family:georgia,garamond,serif;font-size:16px;font-style:italic;">You can view the application here</p>
+        <table class="table table-bordered">
+            <thead>
                 <tr>
                     <th>Applicant ID</th>
                     <th> Applicant Name</th>
@@ -23,10 +24,10 @@
                 <td>{{c.applicationStatus}}</td>
             </tr>
         </tbody>
-        
-        </table><br/><br/>
+      </table><br/><br/>
+    </div>
     <div align="center">
-        <button  (click)="handleClick3()" type="button">Back</button>
+        <button class="btn btn-default" style="background-color: rgb(19,77,107);color:#FDFEFE" (click)="handleClick3()" type="button">Back</button>
     </div>
     </body>
 </html>

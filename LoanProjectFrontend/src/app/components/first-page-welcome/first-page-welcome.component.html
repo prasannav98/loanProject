@@ -3,16 +3,21 @@
         <title>Welcome</title>
     </head>
 <body>
-<h1>Welcome,Now get your Loan approved instantly!!!!</h1>
-<p>Welcome to ABC Bank Loan processing system. Now get your<br/>
-    loan approved immediately using this cool and fully<br/>
-    automated application.  <br/><br/>
-    In order to Submit a new loan request, click on "Submit an<br/>
-    application" link.  <br/><br/>
-    For viewing existing loan application's , click on "View<br/>
-    applications" link.</p><br/>
-    <button (click)="handleClick1()" type="button">Submit an application</button>
-    <button (click)="handleClick2()" type="button">View applications</button>
+    <div>
+        <div class="well well-lg" style="background-color: rgb(19,77,107)"><h1 style="color:#FDFEFE" >Welcome,Now get your Loan approved instantly!!!!</h1></div>
+        <p style = "font-family:georgia,garamond,serif;font-size:16px;font-style:italic;">Welcome to ABC Bank Loan processing system. Now get your<br/>
+        loan approved immediately using this cool and fully<br/>
+        automated application.  <br/><br/>
+        In order to Submit a new loan request, click on "Submit an<br/>
+        application" link.  <br/><br/>
+        For viewing existing loan application's , click on "View<br/>
+        applications" link.</p><br/>
+        <div class="container">
+        <button class="btn btn-default" style="background-color: rgb(19,77,107);color:#FDFEFE;margin:5px" (click)="handleClick1()" type="button">Submit an application</button>
+        <button class="btn btn-default" style="background-color: rgb(19,77,107);color:#FDFEFE;margin:5px" (click)="handleClick2()" type="button">View applications</button>
+        </div>
+</div>
+
 </body>
 </html>
 <router-outlet></router-outlet>

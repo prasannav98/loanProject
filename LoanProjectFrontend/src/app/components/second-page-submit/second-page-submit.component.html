@@ -26,7 +26,7 @@
           <div  class="form-group">
               <label class="control-label col-sm-2">Last Name</label>
               <div class="col-sm-10">
-                      <input  type="text" class="form-control" formControlName="lastName"  placeholder="Last name" />
+                      <input  type="text" class="form-control" formControlName="lastName"  placeholder="Last name"/>
                       <span style="color:red" *ngIf="personForm.controls['lastName'].hasError('required')">Last Name is required</span> 
                       <span style="color:red" *ngIf="personForm.controls['lastName'].hasError('maxlength')">Last Name is too long</span> 
               </div>
@@ -34,9 +34,8 @@
           <div  class="form-group">
                 <label class="control-label col-sm-2">Date of Birth</label>
                 <div class="col-sm-10">
-                        <input  type="date" class="form-control" formControlName="dateofBirth"  placeholder="YYYY-MM-DD" name="dateofBirth" />
+                        <input  type="date" class="form-control" formControlName="dateofBirth"  placeholder="Date of birth" name="dateofBirth"/>
                         <span style="color:red" *ngIf="personForm.controls['dateofBirth'].hasError('required')">Date of birth is required</span>
-
                 </div>
           </div>
           <div  class="form-group">
@@ -62,8 +61,8 @@
           <div  class="form-group">
                 <label class="control-label col-sm-2">Loan Amount</label>
                 <div class="col-sm-10">
-                  <input  type="number" class="form-control" formControlName="loanAmount"  placeholder="loanAmount in $" />
-                  <span style="color:red" *ngIf="personForm.controls['loanAmount'].hasError('required')">Loan Amount is required and should be in $</span>
+                        <input  type="number" class="form-control" formControlName="loanAmount"  placeholder="loanAmount in $" />
+                        <span style="color:red" *ngIf="personForm.controls['loanAmount'].hasError('required')">Loan Amount is required and should be in $</span>
                       </div>
           </div>
           <div  class="form-group">
@@ -121,8 +120,8 @@
               <div class="form-group">
                 <label  class="control-label col-sm-2">Postal Code</label>
                 <div class="col-sm-10">
-                  <input  type="text" digitOnly placeholder="12345" class="form-control" formControlName="postalCode"   maxlength="5"/>
-                  <span   style="color:red"  *ngIf="personForm.controls['postalCode'].hasError('required')">Postal code is Required and should be in numbers</span>
+                <input  type="text" digitOnly placeholder="12345" class="form-control" formControlName="postalCode"   maxlength="5"/>
+                <span   style="color:red"  *ngIf="personForm.controls['postalCode'].hasError('required')">Postal code is Required and should be in numbers</span>
                 </div>
               </div>
     
@@ -137,7 +136,7 @@
               <div class="form-group">
                    <label  class="control-label col-sm-2">Office Phone</label>
                    <div class="col-sm-10">
-                   <input  type="text" class="form-control" formControlName="officePhone"  digitOnly placeholder="12345" maxlength="10"/>
+                   <input  type="text" class="form-control" formControlName="officePhone" digitOnly placeholder="12345" maxlength="10"/>
                    </div>
               </div>
               <div class="form-group">
@@ -150,7 +149,7 @@
               <div class="form-group">
                 <label  class="control-label col-sm-2">Email Address</label>
                 <div class="col-sm-10">
-                <input  type="email" class="form-control" formControlName="emailAddress"  placeholder="test@test.com"/>
+                <input  type="emailAddress" class="form-control" formControlName="emailAddress"  placeholder="test@test.com"/>
                 <span   style="color:red"  *ngIf="personForm.controls['emailAddress'].hasError('required')">Email Address is Required </span>
                 </div>
               </div>
@@ -167,8 +166,8 @@
               <div class="form-group">
                    <label  class="control-label col-sm-2">Annual Salary</label>
                    <div class="col-sm-10">
-                        <input  type="number" class="form-control" formControlName="annualSalary"  placeholder="Annual Salary in $"/>
-                        <span  style="color:red" *ngIf="personForm.controls['annualSalary'].hasError('required')">Employee Salary details is Required and should be in $</span>
+                   <input  type="number" class="form-control" formControlName="annualSalary"  placeholder="Annual Salary in $"/>
+                   <span  style="color:red" *ngIf="personForm.controls['annualSalary'].hasError('required')">Employee Salary details is Required and should be in $</span>
                   </div>
               </div>
               <div class="form-group">
@@ -179,14 +178,14 @@
                   </div>
               </div>
               <div class="form-group">
-                  <label  class="control-label col-sm-2">Work Experience</label>
-                  <div class="col-sm-10">
-                    <label  class="control-label col-sm-0">Years : </label>
-                  <input  type="text" class="form-control" formControlName="workExperienceYears"  placeholder="Years"/>
-                    <label  class="control-label col-sm-0">Months : </label>
-                  <input  type="text" class="form-control" formControlName="workExperienceMonths"  placeholder="Months"/>
-                    </div>
-                </div>
+                <label  class="control-label col-sm-2">Work Experience</label>
+                <div class="col-sm-10">
+                  <label  class="control-label col-sm-0">Years : </label>
+                <input  type="text" class="form-control" formControlName="workExperienceYears"  placeholder="Years"/>
+                  <label  class="control-label col-sm-0">Months : </label>
+                <input  type="text" class="form-control" formControlName="workExperienceMonths"  placeholder="Months"/>
+                  </div>
+              </div>
           
                       <h4>Address</h4>
                       <div class="form-group">
@@ -228,12 +227,12 @@
                              </div>
                        </div>
         
-        <div align="center">
-              <tr>
-                    <td><button [disabled]="!personForm.valid" (click)="onSubmit(personForm.value)" type="submit">Submit</button></td>
-                    <td><button  type="reset">Cancel</button></td>
-              </tr>
-        </div>
+             <div class="buttons">
+              
+                  <button class="btn btn-default" style="background-color: rgb(19,77,107);color:#FDFEFE;margin:5px" [disabled]="!personForm.valid" (click)="onSubmit(personForm.value)" type="submit">Submit</button>
+                  <button class="btn btn-default" style="background-color: rgb(19,77,107);color:#FDFEFE;margin:5px" type="reset">Cancel</button>
+              
+            </div>
            
     </form>
     </div>

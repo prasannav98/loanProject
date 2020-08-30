@@ -1,0 +1,10 @@
+h1 {text-align: center;}
+p {text-align: center;}
+button {
+    
+    display:inline-block;
+  }
+.container {
+    display: flex;
+    justify-content: center;
+  }
