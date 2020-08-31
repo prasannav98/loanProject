@@ -1,18 +1,12 @@
 package com.Team3.loanProject.Controllers;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.*;
-import java.util.Calendar;
 import java.sql.Date;
 
 import com.Team3.loanProject.Entities.Applicant;
 import com.Team3.loanProject.Repositories.ApplicantRepository;
-import com.Team3.loanProject.Services.ApplicantService;
+import com.Team3.loanProject.services.ApplicantService;
 import com.Team3.loanProject.dto.CreateLoanRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.jdbc.NamedParameterJdbcOperationsDependsOnPostProcessor;
-import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,6 +30,49 @@ public class LoanRestController {
 
     @RequestMapping(value = "/home")
     public String home(){
+
+//        Applicant applicant= new Applicant();
+//
+//        applicant.setSSNNumber("54734");
+//        applicant.setFirstName("w");
+//        applicant.setMiddleName("er");
+//        applicant.setLastName("e");
+//        applicant.setDateofBirth(Date.valueOf(LocalDate.now()));
+//        applicant.setDateSubmitted(Date.valueOf(LocalDate.now()));
+//        applicant.setMaritalStatus("request.getApplicantmaritalStatus()");
+//        applicant.setAddressLine1("request.getApplicantaddrLine1()");
+//        applicant.setAddressLine2("request.getApplicantaddrLine2()");
+//        applicant.setCity("request.getApplicantcity()");
+//        applicant.setState("request.getApplicantstate()");
+//        applicant.setPostalCode("a");
+//        applicant.setDescription("s");
+//        applicant.setLoanAmount(874);
+//        applicant.setLoanPurpose("a");
+//        applicant.setAnnualSalary(4457);
+//        applicant.setEmployername("request.getApplicantEmployerName()");
+//        applicant.setEmployerAddress1("request.getApplicantEmployerAddr1()");
+//        applicant.setEmployerAddress2("request.getApplicantEmployerAddr2()");
+//        applicant.setEmployerCity("request.getApplicantEmployerCity()");
+//        applicant.setEmployerState("request.getApplicantEmployerState()");
+//        applicant.setEmployerPostalCode("a");
+//        applicant.setDesignation("request.getApplicantdesignation()");
+//        applicant.setMobile("a");
+//        applicant.setHomePhone("s");
+//        applicant.setOfficePhone("s");
+//        applicant.setEmailAddress("s");
+//        applicant.setWorkExperienceMonth(5);
+//        applicant.setWorkExperienceYears(1);
+//
+//        applicant.setApplicationStatus("In Progress");
+//        applicant.setScore("-");
+//        applicant.setDeclineReason("In Progress");
+//
+//        Applicant a=applicantService.createApplicant(applicant);
+//
+//
+//        double score = applicantService.calculateScore(a);
+
+
         return "Welcome";
     }
 
@@ -85,6 +122,8 @@ public class LoanRestController {
 //        applicant.setDeclineReason("In Progress");
 //
 //        Applicant a=applicantService.createApplicant(applicant);
+
+
 
 
         Applicant applicant= new Applicant();
@@ -144,19 +183,21 @@ public class LoanRestController {
             applicant.setDeclineReason("Declined at FrontEnd - Work Experience is less than 6 months");
         }
 
-        int score=0;
+        double score=0;
+
+        double threshold=6.4;
 
         if(valid){
             score=applicantService.calculateScore(applicant);
             applicant.setScore(String.valueOf(score));
-            if(score>10){ //threshold is 10 randomly, to be calculated by prasanna
+            if(score>threshold){
                 applicant.setApplicationStatus("Approved");
                 applicant.setDeclineReason("-");
             }
             else{
-                applicant.setApplicationStatus("Declined");
 
-                applicant.setDeclineReason(" "); //prassanna take
+                applicant.setApplicationStatus("Declined");
+                applicant.setDeclineReason(applicantService.getDeclinereason());
             }
         }
         else{
