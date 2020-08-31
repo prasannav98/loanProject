@@ -5,154 +5,152 @@
 <body>
     <h1 class="well well-sm" style="background-color: rgb(19,77,107);color:#FDFEFE">View Application</h1>
     <div class="top">
-    Application ID :uu data.idii<br/>
-    Application Status : uudata.applicationStatusii<br/>
-    Score : uudata.scoreii<br/>
-    Decline Reason : uudata.declineReasonii<br/><br/>
+    Application ID :{{ data.id}}<br/>
+    Application Status : {{data.applicationStatus}}<br/>
+    Score : {{data.score}}<br/>
+    Decline Reason : {{data.declineReason}}<br/><br/>
     </div>
-    <div  >
-    <table class="center" class="table table-striped">
+<div class="container" >
+<table class="center" class="table table-bordered">
     <tbody>
-        <tr>
-    <td> First Name </td>
-    <td> uudata.firstNameii</td> 
-        </tr>
-        <tr>
-    <td> Middle Name </td>
-    <td> uudata.middleNameii</td>
-        </tr>
+<tr>
+    <td class="heading"> Personal Details</td>
+</tr>
+<tr>
+    <td>First Name</td>
+    <td>{{data.firstName}}</td> 
+</tr>
+<tr>
+    <td>Middle Name</td>
+    <td>{{data.middleName}}</td>
+</tr>
+<tr>
+    <td>Last Name</td>
+    <td>{{data.lastName}}</td>
+</tr>
+<tr>
+    <td>Date of Birth</td>
+    <td>{{data.dateofBirth}}</td>
+</tr>
+<tr>
+    <td>Marital Status</td>
+    <td>{{data.maritalStatus}}</td>
+</tr>
+<tr>
+    <td>SSN Number</td>
+    <td>{{data.ssnnumber}}</td>
+</tr>
+<tr>
+    <td>Loan Amount</td>
+    <td>{{data.loanAmount}}</td>
+</tr>
+<tr>
+    <td>Loan Purpose</td>
+    <td>{{data.loanPurpose}}</td>
+</tr>
+<tr>
+    <td>Description</td>
+    <td>{{data.description}}</td>
+</tr> 
     <tr>
-    <td> Last Name </td>
-    <td> uudata.lastNameii</td>
+        <td class="heading"> Address</td>
     </tr>
     <tr>
-    <td> Date of Birth </td>
-    <td> uudata.dateofBirthii</td>
+        <td> Address Line 1 </td>
+        <td>{{data.addressLine1}}</td>
     </tr>
-<tr>
-    <td> Marital Status</td>
-     <td>uudata.maritalStatusii</td>
-</tr>
-<tr>
-    <td> SSN Number </td>
-    <td> uudata.ssnnumberii</td>
-</tr>
-<tr>
-    <td> Loan Amount </td>
-    <td> uudata.loanAmountii</td>
-</tr>
-<tr>
-    <td> Loan Purpose </td>
-    <td> uudata.loanPurposeii</td>
-</tr>
-<tr>
-    <td>Description </td>
-    <td>uudata.descriptionii</td>
-</tr>
-        
-    </tbody>
-    </table>
-    <table class="center" class="table table-striped">
-        <tbody>
-        <tr>
-           <td class="heading"> Address</td>
-        </tr>
-        <tr>
-            <td> Address Line 1 </td>
-            <td>   uudata.addressLine1ii</td>
-        </tr>
-        <tr>
-            <td> Address Line 1 </td>
-            <td>   uudata.addressLine2ii</td>
-        </tr>
-        <tr>
-            <td> City </td>
-            <td>   uudata.cityii</td>
-        </tr>
-        <tr>
-            <td> State </td>
-            <td>   uudata.stateii</td>
-        </tr>
-        <tr>
-            <td> Postal Code </td>
-            <td>  uudata.postalCodeii</td>
-        </tr>
-       <!--</tbody>
+    <tr>
+        <td> Address Line 1 </td>
+        <td>{{data.addressLine2}}</td>
+    </tr>
+    <tr>
+        <td> City </td>
+        <td>{{data.city}}</td>
+    </tr>
+    <tr>
+        <td> State </td>
+        <td>{{data.state}}</td>
+    </tr>
+    <tr>
+        <td> Postal Code </td>
+        <td>{{data.postalCode}}</td>
+    </tr>
+    <!--</tbody>
     </table>
     <table class="center" class="table table-striped">
         <tbody>-->
-        <tr>
-            <td class="heading">Contact Information</td>
-        </tr>
-        <tr>
-            <td>Home Phone </td>
-            <td>uudata.homePhoneii</td>
-        </tr>
-        <tr>
-            <td>Office Phone </td>
-            <td> uudata.officePhoneii</td>
-        </tr>
-        <tr>
-            <td>Mobile </td>
-            <td>uudata.mobileii</td>
-        </tr>
-        <tr>
-            <td>Email Address  </td>
-            <td>uudata.emailAddressii</td>
-        </tr>
+    <tr>
+        <td class="heading">Contact Information</td>
+    </tr>
+    <tr>
+        <td>Home Phone </td>
+        <td>{{data.homePhone}}</td>
+    </tr>
+    <tr>
+        <td>Office Phone </td>
+        <td>{{data.officePhone}}</td>
+    </tr>
+    <tr>
+        <td>Mobile </td>
+        <td>{{data.mobile}}</td>
+    </tr>
+    <tr>
+        <td>Email Address  </td>
+        <td>{{data.emailAddress}}</td>
+    </tr>
           <!--  </tbody>
     </table>
         <table class="center" class="table table-striped">
             <tbody>-->
-            <tr>
-        <td class="heading"> Employment Details</td>
-            </tr>
-            <tr>
-        <td>Employer Name </td>
-        <td> uudata.employernameii</td>
-            </tr>
-        <tr>
-            <td>Annual Salary </td>
-            <td>uudata.annualSalaryii</td>
+    <tr>
+    <td class="heading"> Employment Details</td>
         </tr>
+    <tr>
+        <td>Employer Name</td>
+        <td>{{data.employername}}</td>
+    </tr>
+    <tr>
+        <td>Annual Salary</td>
+        <td>{{data.annualSalary}}</td>
+    </tr>
+    <tr>
+        <td>Work Experience</td>
+        <td>Years : {{data.workExperienceYears}} </td>
+    </tr>
         <tr>
-            <td>Work Experience</td>
-            <td>Years : uudata.workExperienceYearsii </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Months: : uudata.workExperienceMonthii</td>
-        </tr>
-        <tr>
-            <td>Designation </td>
-            <td>uudata.designationii</td>
-        </tr>
-        <tr>
-            <td>Employment Address</td>
-        </tr>
-        <tr>
-           <td>Employer Address Line 1 </td>
-             <td>uudata.employerAddress1ii</td>
-        </tr>
-        <tr>
-            <td>Employer Address Line 1 </td>
-            <td>uudata.employerAddress2ii</td>
-        </tr>
-        <tr>
-            <td>Employer City </td>
-            <td>uudata.employerCityii</td>
-        </tr>
-        <tr>
-            <td>Employer State </td>
-            <td>uudata.employerStateii</td>
-        </tr>
-        <tr>
-            <td>Employer Postal Code  </td>
-            <td>uudata.employerPostalCodeii</td>
-        </tr>
-        </tbody>
+        <td></td>
+        <td>Months : {{data.workExperienceMonth}}</td>
+    </tr>
+    <tr>
+        <td>Designation</td>
+        <td>{{data.designation}}</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold ">Employment Address</td>
+    </tr>
+    <tr>
+        <td>Employer Address Line 1 </td>
+        <td>{{data.employerAddress1}}</td>
+    </tr>
+    <tr>
+        <td>Employer Address Line 1 </td>
+        <td>{{data.employerAddress2}}</td>
+    </tr>
+    <tr>
+        <td>Employer City </td>
+        <td>{{data.employerCity}}</td>
+    </tr>
+    <tr>
+        <td>Employer State </td>
+        <td>{{data.employerState}}</td>
+    </tr>
+    <tr>
+        <td>Employer Postal Code  </td>
+        <td>{{data.employerPostalCode}}</td>
+    </tr>
+    </tbody>
     </table>
-    </div>
+</div>
     <div align="center">
         <button  class="btn btn-default" style="background-color: rgb(19,77,107);color:#FDFEFE" (click)="handleClick3()" type="button">Back</button>
     </div>

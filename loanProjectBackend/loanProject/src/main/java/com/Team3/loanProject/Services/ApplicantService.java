@@ -36,8 +36,12 @@ public class ApplicantService {
         return applicantRepository.findAll();
     }
 
+
+
     public int calculateScore(Applicant applicant){
-        return 11;
+        double emp_length=(applicant.getWorkExperienceYears()*12+applicant.getWorkExperienceMonth())/12;
+
+        return 0;
     }
 
 }
