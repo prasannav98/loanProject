@@ -14,7 +14,7 @@ export class FifthPageSuccessComponent implements OnInit {
   }
 
   public handleClick5(){
-    this.router.navigate(['/firstPageWelcome'])
+    this.router.navigate([''])
   }
 
   public handleClick6(){

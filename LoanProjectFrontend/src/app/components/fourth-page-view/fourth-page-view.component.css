@@ -1,0 +1,18 @@
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+  body {text-align:center;}
+
+  td{
+      font-family:georgia,garamond,serif;
+      font-size:16px;font-style:italic;
+    }
+.heading{
+    background-color:rgb(19,77,107);
+    color:#FDFEFE;
+}
+.top{
+    font-family:georgia,garamond,serif;
+    font-size:16px;font-style:italic;
+}

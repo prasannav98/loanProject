@@ -29,7 +29,7 @@ export class ThirdPageViewComponent implements OnInit {
   }
   
   public handleClick3(){
-    this.router.navigate(['/firstPageWelcome'])
+    this.router.navigate([''])
   }
 
 }
