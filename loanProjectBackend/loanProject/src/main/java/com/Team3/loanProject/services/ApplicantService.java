@@ -83,36 +83,35 @@ public class ApplicantService {
         score = pow(2.71, score);
         double dtr = debt_to_income_ratio*(-2.818);
         setDeclinereason("Your Loan is higher for your given Annual income");
-        System.out.println(dtr);
         if(dtr>(dl2y*(-0.1380))){
             dtr=dl2y*(-0.1380);
             setDeclinereason("Your Delinquency is high");
-            System.out.println(dtr);
+
         }
         if(dtr>(il6m*(-0.2159))){
             dtr=il6m*(-0.2159);
             setDeclinereason("Too many inquiries in this given 6 month period by crediter");
-            System.out.println(dtr);
+
         }
         if(dtr>(mslr*(-0.0010))){
             dtr=mslr*(-0.0010);
             setDeclinereason("The months since last public record is high");
-            System.out.println(dtr);
+
         }
         if(dtr>(oa*(-0.0198))){
             dtr=oa*(-0.0198);
             setDeclinereason("There are already many open credit lines in the borrower's account");
-            System.out.println(dtr);
+
         }
         if(dtr>(pr*(-0.4993))){
             dtr= pr*(-0.4993);
             setDeclinereason("Too many derogatory public records against borrower");
-            System.out.println(dtr);
+
         }
         if(dtr>(ru*(-1.3039))){
             dtr= ru*(-1.3039);
             setDeclinereason("Revolving line Utilization rate is too high");
-            System.out.println(dtr);
+          
         }
 
 //        System.out.println(emp_length);
