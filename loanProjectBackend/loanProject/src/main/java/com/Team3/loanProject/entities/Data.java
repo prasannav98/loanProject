@@ -1,4 +1,4 @@
-package com.Team3.loanProject.Entities;
+package com.Team3.loanProject.entities;
 
 import javax.persistence.*;
 

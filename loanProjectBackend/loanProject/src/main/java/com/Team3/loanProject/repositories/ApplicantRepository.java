@@ -1,6 +1,6 @@
-package com.Team3.loanProject.Repositories;
+package com.Team3.loanProject.repositories;
 
-import com.Team3.loanProject.Entities.Applicant;
+import com.Team3.loanProject.entities.Applicant;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

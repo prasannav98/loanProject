@@ -1,15 +1,17 @@
 package com.Team3.loanProject.services;
 
-import com.Team3.loanProject.Entities.Applicant;
-import com.Team3.loanProject.Entities.Data;
-import com.Team3.loanProject.Repositories.ApplicantRepository;
+import com.Team3.loanProject.entities.Applicant;
+import com.Team3.loanProject.entities.Data;
+import com.Team3.loanProject.repositories.ApplicantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.lang.Math;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 import java.util.Optional;
 
+import static java.lang.Boolean.FALSE;
 import static java.lang.StrictMath.pow;
 
 @Service
@@ -48,6 +50,28 @@ public class ApplicantService {
 
     public List<Applicant> getall() {
         return applicantRepository.findAll();
+    }
+
+    public boolean frontEndValid(Applicant applicant){
+        boolean valid= true;
+
+        LocalDate l = applicant.getDateofBirth().toLocalDate(); //specify year, month, date directly
+        LocalDate now = LocalDate.now(); //gets localDate Period
+        Period diff = Period.between(l, now); //difference between the dates is calculated
+
+        if(applicant.getAnnualSalary()<10000){
+            valid=FALSE;
+            applicant.setDeclineReason("Declined at FrontEnd - Salary is less than $10000");
+        }
+        else if(diff.getYears()<18||diff.getYears()>65) {
+            valid=FALSE;
+            applicant.setDeclineReason("Declined at FrontEnd - Age not Age Group in 18-65");
+        }
+        else if(applicant.getWorkExperienceYears()<1&&applicant.getWorkExperienceMonth()<6){
+            valid=FALSE;
+            applicant.setDeclineReason("Declined at FrontEnd - Work Experience is less than 6 months");
+        }
+        return valid;
     }
 
 
@@ -111,7 +135,7 @@ public class ApplicantService {
         if(dtr>(ru*(-1.3039))){
             dtr= ru*(-1.3039);
             setDeclinereason("Revolving line Utilization rate is too high");
-          
+
         }
 
 //        System.out.println(emp_length);
@@ -133,10 +157,6 @@ public class ApplicantService {
 //        System.out.println();
 //        System.out.println();
 //        System.out.println();
-
-
-
-
 
 
         return score;

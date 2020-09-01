@@ -1,7 +1,7 @@
 package com.Team3.loanProject.services;
 
-import com.Team3.loanProject.Entities.Data;
-import com.Team3.loanProject.Repositories.DataRepository;
+import com.Team3.loanProject.entities.Data;
+import com.Team3.loanProject.repositories.DataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

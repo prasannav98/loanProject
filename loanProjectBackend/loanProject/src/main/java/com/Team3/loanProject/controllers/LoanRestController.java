@@ -1,9 +1,9 @@
-package com.Team3.loanProject.Controllers;
+package com.Team3.loanProject.controllers;
 
 import java.sql.Date;
 
-import com.Team3.loanProject.Entities.Applicant;
-import com.Team3.loanProject.Repositories.ApplicantRepository;
+import com.Team3.loanProject.entities.Applicant;
+import com.Team3.loanProject.repositories.ApplicantRepository;
 import com.Team3.loanProject.services.ApplicantService;
 import com.Team3.loanProject.dto.CreateLoanRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -166,30 +166,16 @@ public class LoanRestController {
 
         boolean valid=TRUE;
 
-        LocalDate l = applicant.getDateofBirth().toLocalDate(); //specify year, month, date directly
-        LocalDate now = LocalDate.now(); //gets localDate Period
-        Period diff = Period.between(l, now); //difference between the dates is calculated
-
-        if(applicant.getAnnualSalary()<10000){
-            valid=FALSE;
-            applicant.setDeclineReason("Declined at FrontEnd - Salary is less than $10000");
-        }
-        else if(diff.getYears()<18||diff.getYears()>65) {
-            valid=FALSE;
-            applicant.setDeclineReason("Declined at FrontEnd - Age not Age Group in 18-65");
-        }
-        else if(applicant.getWorkExperienceYears()<1&&applicant.getWorkExperienceMonth()<6){
-            valid=FALSE;
-            applicant.setDeclineReason("Declined at FrontEnd - Work Experience is less than 6 months");
-        }
+        valid=applicantService.frontEndValid(applicant);
 
         double score=0;
 
         double threshold=6.4;
 
         if(valid){
-            score=applicantService.calculateScore(applicant);
-            applicant.setScore(String.valueOf(score));
+            score = applicantService.calculateScore(applicant);
+            String formato = String.format("%.2f", score);
+            applicant.setScore(formato);
             if(score>threshold){
                 applicant.setApplicationStatus("Approved");
                 applicant.setDeclineReason("-");
@@ -203,7 +189,6 @@ public class LoanRestController {
         else{
             applicant.setScore("0");
             applicant.setApplicationStatus("Declined");
-            applicant.setDeclineReason("Validations Failed");
         }
 
         applicantService.updateApplicant(applicant1);
