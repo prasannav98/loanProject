@@ -9,7 +9,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Applicant ID</th>
+                    <th >Applicant ID</th>
                     <th> Applicant Name</th>
                     <th>Submitted Date</th>
                     <th>Status</th>   
@@ -19,7 +19,7 @@
         <tbody>
             <tr *ngFor="let c of data">
                 <td><a [routerLink]=" " (click)="onPress(c.id)">{{c.id}}</a></td>
-                <td>{{c.firstName+c.middleName+c.lastName}}</td>
+                <td>{{c.firstName+" " + c.middleName +" " +c.lastName}}</td>
                 <td>{{c.dateSubmitted}}</td>
                 <td>{{c.applicationStatus}}</td>
             </tr>
